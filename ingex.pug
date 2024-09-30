@@ -1,0 +1,22 @@
+doctype html
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport" content="width=device-width, initial-scale=1.0")
+        title Сайт на Pug
+        link(rel="stylesheet" href="./css/style.css")
+    body 
+        - var games = [{ title: 'Mafia 2',releaseDay: '27.08.2010',image: 'mafia2.jpeg'}, { title: 'Call of Duty: Modern Warfare 2', releaseDay: '10.11.2009', image: 'call_of_duty2.jpeg' }, { title: 'Mass Effect 2', releaseDay: ' 29.01.2010', image: 'mass_effect_2.jpg' }, { title: 'StarCraft II: Wings of Liberty', releaseDay: '27.07.2010', image: 'star_craft.jpg' }, { title: 'Assassin"s Creed II', releaseDay: '27.11.2009', image: 'assasins_2.jpg' }, { title: 'S.T.A.L.K.E.R.: Чернобыль', releaseDay: '05.02.2010', image: 'stalker.jpg' }, { title: 'Ведьмак 2: Убийцы королей', releaseDay: '17.05.2011', image: 'the_witcher2.png' }]
+        .container
+            h1.title Лучшие игры
+            p.container_text Some text about games
+            ul.grid
+                each info in games
+                    li.grid__item
+                        article.card
+                            a.card__image(href='/')
+                                img(src='./img/' + info.image, alt=info.image)
+                            h2.card__title
+                                a(href='/')=info.title
+                            br
+                            span.card__date='Дата выпуска: ' + info.releaseDay
