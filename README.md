@@ -14,3 +14,5 @@ To build the site, run the following commands:
 3. `pug .\ingex.pug`
 
 This will generate the site in the same directory as the readme.
+
+![alt](./img/site_preview.png)
